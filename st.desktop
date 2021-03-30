@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=st
+GenericName=simple terminal
+Comment=Terminal emulation doesn't need to be so complex.
+Exec=/usr/local/bin/st
+Icon=
+Terminal=false
+Categories=Development;
+StartupNotify=true
