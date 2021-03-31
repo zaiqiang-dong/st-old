@@ -198,7 +198,7 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
-	{ AltMask,              XK_c,           normalMode,     {.i =  0} },
+	{ ControlMask,          XK_g,           normalMode,     {.i =  0} },
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
@@ -206,13 +206,13 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ ControlMask,          XK_c,           clipcopy,       {.i =  0} },
+	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
+	{ ControlMask,          XK_y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = 1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = 1} },
+	{ ControlMask,          XK_f,           kscrollup,      {.i = 1} },
+	{ ControlMask,          XK_b,           kscrolldown,    {.i = 1} },
 };
 
 /*
