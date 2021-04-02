@@ -215,6 +215,7 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_f,           kscrollup,      {.i = 1} },
 	{ ControlMask,          XK_b,           kscrolldown,    {.i = 1} },
 	{ Mod1Mask,             XK_l,           copyurl,        {.i =  0} },
+	{ Mod1Mask,             XK_o,           opencopied,     {.v = "xdg-open"} },
 
 };
 
