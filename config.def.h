@@ -212,8 +212,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ControlMask,          XK_f,           kscrollup,      {.i = 1} },
-	{ ControlMask,          XK_b,           kscrolldown,    {.i = 1} },
+	{ ControlMask,          XK_f,           kscrollup,      {.i = 2} },
+	{ ControlMask,          XK_b,           kscrolldown,    {.i = 2} },
 	{ Mod1Mask,             XK_l,           copyurl,        {.i =  0} },
 	{ Mod1Mask,             XK_o,           opencopied,     {.v = "xdg-open"} },
 
