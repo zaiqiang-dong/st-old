@@ -166,8 +166,8 @@ static unsigned int mousebg = 0;
 static unsigned int defaultattr = 11;
 /// Colors for the entities that are 'highlighted' in normal mode (search
 /// results currently on screen) [Vim Browse].
-static unsigned int highlightBg = 160;
-static unsigned int highlightFg = 15;
+static unsigned int highlightBg = 14;
+static unsigned int highlightFg = 16;
 /// Colors for highlighting the current cursor position (row + col) in normal
 /// mode [Vim Browse].
 static unsigned int currentBg = 8;
@@ -512,10 +512,10 @@ size_t const amountNormalModeShortcuts = sizeof(normalModeShortcuts) / sizeof(*n
 
 /// Style of the command string visualized in normal mode in the right corner
 /// [Vim Browse].
-Glyph const styleCommand = {' ', ATTR_ITALIC | ATTR_FAINT, 7, 16};
+Glyph const styleCommand = {' ', ATTR_ITALIC | ATTR_FAINT, 234, 4};
 /// Style of the search string visualized in normal mode in the right corner.
 /// [Vim Browse].
-Glyph const styleSearch = {' ', ATTR_ITALIC | ATTR_BOLD_FAINT, 7, 16};
+Glyph const styleSearch = {' ', ATTR_ITALIC | ATTR_BOLD_FAINT, 234, 11};
 
 /// Colors used in normal mode in order to highlight different operations and
 /// empathise the current position on screen  in  the status area [Vim Browse].
