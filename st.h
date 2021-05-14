@@ -80,6 +80,7 @@ void printsel(const Arg *);
 void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
 void copyurl(const Arg *);
+void newterm(const Arg *);
 
 int tattrset(int);
 void tnew(int, int);
