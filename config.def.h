@@ -107,7 +107,7 @@ static const char *colorname[] = {
 	"steelblue",
 	"mediumvioletred",
 	"mediumturquoise",
-	"whitesmoke",
+	"#B3B6B7",
 
 	/* 8 bright colors */
 	"dimgray",
