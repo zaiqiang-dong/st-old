@@ -7,7 +7,7 @@
  */
 static char *font = "JetBrains Mono NL:style=Bold:size=13";
 static char *font2[] = {
-    "JoyPixels:style=Regular",
+    "Noto Color Emoji:style=Regular",
     "JetBrainsMonoNL Nerd Font:size=13",};
 
 static int borderpx = 2;
