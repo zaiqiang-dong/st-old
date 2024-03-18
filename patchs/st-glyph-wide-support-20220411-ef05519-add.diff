@@ -1,0 +1,52 @@
+diff --git a/st.c b/st.c
+index 1a12e3c..d9c117c 100644
+--- a/st.c
++++ b/st.c
+@@ -2718,7 +2718,8 @@ draw(void)
+ 
+ 	drawregion(0, 0, term.col, term.row);
+ 	xdrawcursor(cx, term.c.y, TLINE(term.c.y)[cx],
+-			term.ocx, term.ocy, TLINE(term.ocy)[term.ocx]);
++			term.ocx, term.ocy, term.line[term.ocy][term.ocx],
++			term.line[term.ocy], term.col);
+ 	term.ocx = cx;
+ 	term.ocy = term.c.y;
+ 	xfinishdraw();
+diff --git a/win.h b/win.h
+index 08bda54..5016ac2 100644
+--- a/win.h
++++ b/win.h
+@@ -26,7 +26,7 @@ enum win_mode {
+ 
+ void xbell(void);
+ void xclipcopy(void);
+-void xdrawcursor(int, int, Glyph, int, int, Glyph);
++void xdrawcursor(int, int, Glyph, int, int, Glyph, Line, int);
+ void xdrawline(Line, int, int, int);
+ void xdrawglyph(Glyph, int, int);
+ void xfinishdraw(void);
+diff --git a/x.c b/x.c
+index 7cf693f..ef88caf 100644
+--- a/x.c
++++ b/x.c
+@@ -1617,7 +1617,7 @@ xdrawglyph(Glyph g, int x, int y)
+ }
+ 
+ void
+-xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
++xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line, int len)
+ {
+ 	Color drawcol;
+ 
+@@ -1625,8 +1625,9 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
+ 	if (selected(ox, oy)) og.mode ^= ATTR_REVERSE;
+ 	if (highlighted(ox, oy)) { og.mode ^= ATTR_HIGHLIGHT; }
+ 	if (currentLine(ox, oy)) { og.mode ^= ATTR_CURRENT; }
+-	xdrawglyph(og, ox, oy);
+-
++	/* Redraw the line where cursor was previously.
++ 	 * It will restore wide glyphs and ligatures broken by the cursor. */
++	xdrawline(line, 0, oy, len);
+ 	if (IS_SET(MODE_HIDE))
+ 		return;
+ 
